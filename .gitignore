@@ -1,0 +1,24 @@
+# Клиентские ненужные папки
+/client/node_modules
+
+# Серверные ненужные папки
+/server/node_modules
+/server/.env
+/server/tickers
+
+# IDE - VSCode
+.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
