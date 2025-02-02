@@ -1,0 +1,60 @@
+@import '../../styles_base/variables.scss';
+
+.input_style {
+    padding: 0 8px;
+    margin: 10px 0;
+
+    border: 2px solid $font_light;
+    border-radius: 10px;
+
+    background-color: transparent;
+
+    color: $font_light;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: $font_light_hover;
+        color: $font_light_hover;
+
+        &::placeholder {
+            color: $font_light_hover;
+        }
+    }
+
+    &::placeholder {
+        color: $font_light;
+    }
+
+    &::selection {
+        background-color: rgba(white, 0.2);
+    }
+}
+
+.s {
+    height: 20px;
+
+    font-size: small;
+}
+
+.m {
+    height: 25px;
+
+    font-size: medium;
+}
+
+.l {
+    height: 30px;
+
+    font-size: large;
+}
+
+.xl {
+    height: 35px;
+
+    font-size: large;
+}
+
+.full_width {
+    width: 100%;
+}

@@ -1,0 +1,30 @@
+@import '../../styles_base/variables.scss';
+
+.modal {
+    z-index: 20;
+    position: fixed;
+
+    height: 100vh;
+    width: 100vw;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(black, 0.5);
+
+    &_info {
+        width: 300px;
+        height: auto;
+
+        padding: 30px;
+
+        border: 2px solid;
+        border-radius: 10%;
+        background-color: rgba($font_light, 0.3);
+        box-shadow: 0 0 30px $font_light;
+    }
+}

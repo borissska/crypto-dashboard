@@ -1,0 +1,209 @@
+@import "../shared/styles_base/variables.scss";
+
+.fullscreen_gradient {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    $night_background 32%,
+    $sun-set 49%,
+    darken($night_background, 7%) 55%
+  );
+
+  &::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+
+    background: conic-gradient(
+      from 90deg,
+      transparent 3.8deg,
+      rgba(255, 0, 127, 0.6) 4deg,
+      transparent 4.2deg,
+      transparent 6.6deg,
+      rgba(255, 0, 127, 0.6) 7deg,
+      transparent 7.4deg,
+      transparent 11.4deg,
+      rgba(255, 0, 127, 0.6) 12deg,
+      transparent 12.6deg,
+      transparent 18.3deg,
+      rgba(255, 0, 127, 0.6) 19deg,
+      transparent 19.7deg,
+      transparent 29.2deg,
+      rgba(255, 0, 127, 0.6) 30deg,
+      transparent 30.8deg,
+      transparent 44.1deg,
+      rgba(255, 0, 127, 0.6) 45deg,
+      transparent 45.9deg,
+      transparent 64deg,
+      rgba(255, 0, 127, 0.6) 65deg,
+      transparent 66deg,
+      transparent 89deg,
+      rgba(255, 0, 127, 0.6) 90deg,
+      transparent 91deg,
+      transparent 114deg,
+      rgba(255, 0, 127, 0.6) 115deg,
+      transparent 116deg,
+      transparent 134deg,
+      rgba(255, 0, 127, 0.6) 135deg,
+      transparent 136deg,
+      transparent 149.2deg,
+      rgba(255, 0, 127, 0.6) 150deg,
+      transparent 150.8deg,
+      transparent 160.3deg,
+      rgba(255, 0, 127, 0.6) 161deg,
+      transparent 161.7deg,
+      transparent 167.4deg,
+      rgba(255, 0, 127, 0.6) 168deg,
+      transparent 168.6deg,
+      transparent 172.6deg,
+      rgba(255, 0, 127, 0.6) 173deg,
+      transparent 173.4deg,
+      transparent 175.8deg,
+      rgba(255, 0, 127, 0.6) 176deg,
+      transparent 176.2deg,
+    );
+    opacity: 0.7;
+  }
+
+  &::after {
+    z-index: 1;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 54%;
+    background: linear-gradient(
+      to top,
+      transparent 103px,
+      rgba(255, 0, 127, 0.6) 110px,
+      transparent 117px,
+      transparent 234px,
+      rgba(255, 0, 127, 0.6) 240px,
+      transparent 246px,
+      transparent 324px,
+      rgba(255, 0, 127, 0.6) 330px,
+      transparent 336px,
+      transparent 390px,
+      rgba(255, 0, 127, 0.6) 395px,
+      transparent 400px,
+      transparent 436px,
+      rgba(255, 0, 127, 0.6) 440px,
+      transparent 444px,
+      transparent 472px,
+      rgba(255, 0, 127, 0.6) 475px,
+      transparent 478px,
+      transparent 498px,
+      rgba(255, 0, 127, 0.6) 500px,
+      transparent 502px,
+      transparent 516px,
+      rgba(255, 0, 127, 0.6) 518px,
+      transparent 520px,
+    );
+    opacity: 0.7;
+  }
+
+  .sun {
+    pointer-events: none;
+    z-index: 1;
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background: radial-gradient(circle, transparent);
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(255, 165, 0, 0.5);
+    animation: sun-glow 60s infinite alternate ease-in-out;
+  
+    &::before {
+      pointer-events: none;
+      z-index: 1;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to top,
+        transparent 0%,
+        transparent 5%,
+         $sun 0%,
+         $sun 11%
+      );
+      opacity: 1;
+    }
+  
+    &::after {
+      pointer-events: none;
+      z-index: 1;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 165, 0, 0.3), transparent);
+      animation: sun-glow 60s infinite alternate ease-in-out;
+    }
+  }
+
+  .city_landscape {
+    pointer-events: none;
+    z-index: 2;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.7);
+    width: 700px;
+    height: 350px;
+
+    background: linear-gradient(to top, 
+    $sun_set 29%,
+    black 37%,
+    $sun_set 80%, 
+    ),
+      url("../../public/retrowave_city.svg") no-repeat center;
+    background-size: contain;
+
+    mask-image: url("../../public/retrowave_city.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  .main_part {
+    position: relative;
+
+    z-index: 10;
+
+    height: 100%;
+
+    margin: 20px 190px;
+
+    pointer-events: auto !important;
+  }
+}
+
+@keyframes sun-glow {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}

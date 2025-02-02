@@ -1,0 +1,68 @@
+@import "../../shared/styles_base/variables.scss";
+
+.navbar {
+  pointer-events: auto;
+  z-index: 10;
+  width: 100%;
+  flex-wrap: wrap;
+
+  &_content {
+    background-color: transparent;
+    display: flex;
+    margin: 0 7.7%;
+    flex-flow: row, nowrap;
+    justify-content: flex-start;
+    padding: 20px 50px;
+    overflow: hidden;
+
+    .list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      gap: 20px;
+      width: 100%;
+
+      .element {
+        
+        &:first-child {
+          a {
+            font-size: 24px;
+          }
+        }
+
+        &:last-child {
+          margin-left: auto;
+        }
+
+        a {
+          cursor: pointer;
+          font-size: 20px;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .name_sign {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: relative;
+    left: 7%;
+    display: flex;
+    background-color: $font_light;
+    width: 86%;
+    height: 1px;
+    transition: all 0.6s ease;
+  }
+
+  &:hover::after {
+    left: 0%;
+    width: 100%;
+    background-color: $font_light_hover;
+  }
+}

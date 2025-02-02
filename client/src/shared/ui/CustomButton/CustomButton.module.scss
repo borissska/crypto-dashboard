@@ -1,0 +1,50 @@
+@import '../../styles_base/variables.scss';
+
+.button_style {
+    width: 130px;
+
+    float: right;
+
+    margin: 20px 0px 0 0;
+
+    border: 2px solid $font_light;
+    border-radius: 15px;
+
+    background-color: transparent;
+    
+    color: $font_light;
+    font-size: large;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: $font_light_hover;
+        color: $font_light_hover;
+    }
+}
+
+.s {
+    height: 25px;
+
+    font-size: small;
+}
+
+.m {
+    height: 30px;
+
+    font-size: medium;
+}
+
+.l {
+    height: 35px;
+
+    font-size: medium;
+}
+
+.xl {
+    height: 40px;
+
+    font-size: large;
+}

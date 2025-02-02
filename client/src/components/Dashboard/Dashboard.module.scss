@@ -1,0 +1,21 @@
+.dashboard {
+    
+
+    &_title {
+
+    }
+
+    &_content {
+        display: flex;
+
+        flex-direction: row;
+
+        &_leftrow {
+            height: 900px;
+        }
+
+        &_rightrow {
+
+        }
+    }
+}
