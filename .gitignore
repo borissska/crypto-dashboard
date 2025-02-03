@@ -1,5 +1,7 @@
 # Клиентские ненужные папки
 /client/node_modules
+# /client/package-lock.json
+# /client/package.json
 
 # Серверные ненужные папки
 /server/node_modules
